@@ -20,10 +20,36 @@ class Widget:
 
  */
 
- class Widget {
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+class Widget {
+
+  private:
+    string msg;
+
+  public:
     Widget(){
-        msg = "ola, eu sou um widget"
+        msg = "Hello, I'm a widget!";
     }
     
+    void replace(){
+      for (size_t i = 0; i < msg.length() ; i++)  // ✅ length() é um método, precisa de ()
+      {
+        if (msg[i] == 'w')  // ✅ == para comparação (não =) e '' para char (não "")
+        {
+          msg[i] = 'g';     // ✅ '' para atribuição de char (não "")
+        }
+      }
+    }
+    
+    string str(){
+      return "String: " + msg;
+    }
 
- };
+};
+
+
+
